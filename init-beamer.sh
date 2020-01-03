@@ -5,7 +5,7 @@ pathpre=`cd \`dirname $0\`; pwd`
 
 cd $CURRENTPATH
 
-mkdir ref backup supports styles
+mkdir -p ref backup supports styles
 
 # bash scripts to accelerate operations
 cp -rf ${pathpre}/supports ./
