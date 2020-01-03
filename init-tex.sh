@@ -1,18 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pathpre="${HOME}/Public/Dropbox/Academia/latex_templ"
+CURRENTPATH=$PWD
+pathpre=`cd \`dirname $0\`; pwd`
 
-mkdir figures ref archived backup supports
+cd $CURRENTPATH
+
+mkdir -p figures ref archived backup supports
 
 # bash scripts to accelerate operations
-cp -r ${pathpre}/supports ./
+cp -rf ${pathpre}/supports ./
 
-cp ${pathpre}/userdef-mathsym.tex supports/
-cp ${pathpre}/ref/library.bib ./ref/
-cp ${pathpre}/ref/natbib.bst ./ref/
+cp -rf ${pathpre}/userdef-mathsym.tex supports/
+cp -rf ${pathpre}/ref/library.bib ./ref/
+cp -rf ${pathpre}/ref/natbib.bst ./ref/
 
-cp ${pathpre}/_gitignore .gitignore
-cp ${pathpre}/_projectile .projectile
+cp -rf ${pathpre}/_gitignore .gitignore
+cp -rf ${pathpre}/_projectile .projectile
 
 
 # touch .tex file

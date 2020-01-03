@@ -1,24 +1,27 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pathpre="${HOME}/Public/Dropbox/Academia/latex_templ"
+CURRENTPATH=$PWD
+pathpre=`cd \`dirname $0\`; pwd`
+
+cd $CURRENTPATH
 
 mkdir ref backup supports styles
 
 # bash scripts to accelerate operations
-cp -r ${pathpre}/supports ./
+cp -rf ${pathpre}/supports ./
 
-cp ${pathpre}/userdef-mathsym.tex supports/
-cp ${pathpre}/ref/library.bib  ./ref/
-cp -r ${pathpre}/beamer-fig        ./figures
+cp -rf ${pathpre}/userdef-mathsym.tex supports/
+cp -rf ${pathpre}/ref/library.bib  ./ref/
+cp -rf ${pathpre}/beamer-fig        ./figures
 
-cp ${pathpre}/_gitignore  .gitignore
-cp ${pathpre}/_projectile .projectile
+cp -rf ${pathpre}/_gitignore  .gitignore
+cp -rf ${pathpre}/_projectile .projectile
 
 # use color themes
-cp ${pathpre}/beamer-sty/zyuebeamer.sty ./styles/
-cp ${pathpre}/beamer-sty/zyuebeamerdark.sty ./styles/
-cp ${pathpre}/beamer-sty/zyuebeamerplain.sty ./styles/
-cp ${pathpre}/beamer-sty/lcsbbeamer.sty ./styles/
+cp -rf ${pathpre}/beamer-sty/zyuebeamer.sty ./styles/
+cp -rf ${pathpre}/beamer-sty/zyuebeamerdark.sty ./styles/
+cp -rf ${pathpre}/beamer-sty/zyuebeamerplain.sty ./styles/
+cp -rf ${pathpre}/beamer-sty/lcsbbeamer.sty ./styles/
 
 # touch .tex file
 touch beamer.tex
